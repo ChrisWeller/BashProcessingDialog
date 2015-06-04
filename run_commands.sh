@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -n $DISPLAY ]; then
+if [ -s $DISPLAY ]; then
 	DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 	source $DIR/run_x_commands.sh
 
