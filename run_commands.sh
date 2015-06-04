@@ -7,7 +7,7 @@ if ! xset q &>/dev/null; then
 		Percentage=$((i * 100 / NumCommands))
 		echo $Percentage
 		echo "# ${Notes[$i]}"
-		${Commands[$i]}
+		eval ${Commands[$i]}
 	done
 
 else
