@@ -2,6 +2,7 @@
 
 if ! xset q &>/dev/null; then
 
+	NumCommands=${#Commands[@]}
 	for i in "${!Commands[@]}"; do 
 		Percentage=$((i * 100 / NumCommands))
 		echo $Percentage
