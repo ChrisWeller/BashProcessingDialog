@@ -1,6 +1,9 @@
 #!/bin/bash
+if [ -n $DISPLAY ]; then
+	DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+	source $DIR/run_x_commands.sh
 
-if ! xset q &>/dev/null; then
+else
 
 	NumCommands=${#Commands[@]}
 	for i in "${!Commands[@]}"; do 
@@ -10,7 +13,4 @@ if ! xset q &>/dev/null; then
 		eval ${Commands[$i]}
 	done
 
-else
-	DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-	source $DIR/run_x_commands.sh
 fi
